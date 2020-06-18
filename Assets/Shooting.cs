@@ -6,11 +6,11 @@ public class Shooting : MonoBehaviour
 {
 
     public Camera fpsCamera;
-    Animator animation;
+    Animator meh_animator;
 
     void Start()
     {
-        animation = GetComponent<Animator>();
+        meh_animator = GetComponent<Animator>();
     }
     void Update()
     {
@@ -27,7 +27,7 @@ public class Shooting : MonoBehaviour
         if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hitInfo))
         {
             Debug.Log(hitInfo.transform.name);
-            animation.SetTrigger("Shoot");
+            meh_animator.SetTrigger("Shoot");
         }
     }
 }
