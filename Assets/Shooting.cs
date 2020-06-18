@@ -6,8 +6,12 @@ public class Shooting : MonoBehaviour
 {
 
     public Camera fpsCamera;
+    Animator animation;
 
-
+    void Start()
+    {
+        animation = GetComponent<Animator>();
+    }
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
@@ -23,6 +27,7 @@ public class Shooting : MonoBehaviour
         if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hitInfo))
         {
             Debug.Log(hitInfo.transform.name);
+            animation.SetTrigger("Shoot");
         }
     }
 }
