@@ -23,11 +23,11 @@ public class Shooting : MonoBehaviour
 
     void Shoot()
     {
+        meh_animator.SetTrigger("Shoot");
         RaycastHit hitInfo;
         if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hitInfo))
         {
-            Debug.Log(hitInfo.transform.name);
-            meh_animator.SetTrigger("Shoot");
+            Debug.Log(hitInfo.transform.name);       
         }
     }
 }
