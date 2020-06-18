@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MarkonScene.unity
+    guid: 7efd969a17ebeb4479c890da72fab326
   m_configObjects: {}

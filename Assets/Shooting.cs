@@ -7,6 +7,7 @@ public class Shooting : MonoBehaviour
 
     public Camera fpsCamera;
     Animator meh_animator;
+    public ParticleSystem flash;
 
     void Start()
     {
@@ -16,7 +17,7 @@ public class Shooting : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-
+            flash.Play();
             Shoot();
         }
     }
@@ -24,6 +25,7 @@ public class Shooting : MonoBehaviour
     void Shoot()
     {
         meh_animator.SetTrigger("Shoot");
+        
         RaycastHit hitInfo;
         if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hitInfo))
         {
