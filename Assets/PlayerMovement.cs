@@ -5,7 +5,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
+    public float walkSpeed = 12f;
     public float speed = 12f;
+    public float runSpeed = 20f;
     public float gravity = -19.62f;
     public float jumpHeight = 3f;
     public Transform groundCheck;
@@ -30,6 +32,12 @@ public class PlayerMovement : MonoBehaviour
         {
             velocity.y = -2f;
         }
+
+        if (Input.GetKey(KeyCode.LeftShift) && isGrounded)
+        {
+            speed = runSpeed;
+        }else
+        speed = walkSpeed;
 
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
