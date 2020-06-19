@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
-
+    public float damage = 100f;
     public Camera fpsCamera;
     Animator meh_animator;
     public ParticleSystem flash;
@@ -29,7 +29,12 @@ public class Shooting : MonoBehaviour
         RaycastHit hitInfo;
         if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hitInfo))
         {
-            Debug.Log(hitInfo.transform.name);       
+            Debug.Log(hitInfo.transform.name);
+            Target target = hitInfo.transform.GetComponent<Target>();
+            if (target != null)
+            {
+                target.Damage(damage);
+            }
         }
     }
 }
